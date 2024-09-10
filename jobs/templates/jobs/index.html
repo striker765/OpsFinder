@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Search</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome para ícones -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2 class="text-center">Menu</h2>
+        </div>
+        <ul class="sidebar-menu">
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-home"></i> admin</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Sobre</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i> Contato</a></li>
+            <li><a href="#"><i class="fas fa-question-circle"></i> Ajuda</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <form action="{% url 'logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-logout">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
+                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
+                    </svg>
+                    Logout
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <button class="sidebar-toggle" id="sidebar-toggle">
+        <i class="fas fa-chevron-left"></i>
+    </button>
+
+
+    <div class="content">
+        <header>
+            <h1 class="mt-4 mb-4">Bem-vindo à Pesquisa procedimentos</h1>
+        </header>
+        <div class="container">
+            <p style="font-size: 1.2em; color: #f0f0f0; text-align: center; margin-bottom: 20px; font-weight: bold;">
+                Use a <span style=" font-weight: bold;">barra de pesquisa</span> abaixo para pesquisar:
+            </p>
+            <form id="search-form" method="post" class="mb-4">
+                {% csrf_token %}
+                <div class="search-bar">
+                    <input type="text" name="job_name" placeholder="Nome do Job">
+                    <button type="submit">🔍</button>
+                </div>
+            </form>
+
+            <div id="job-results">
+                {% include 'jobs/results.html' %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sidebar-toggle').click(function() {
+                $('#sidebar').toggleClass('hidden');
+                $('.content').toggleClass('expanded');
+            });
+        });
+    </script>
+</body>
+</html>
