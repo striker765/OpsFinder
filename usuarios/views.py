@@ -24,3 +24,5 @@ def logout(request):
     auth.logout(request)
     messages.success(request, 'Logout efetuado com sucess!')
     return redirect('login')
+
+

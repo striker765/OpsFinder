@@ -1,8 +1,8 @@
 /* Estilos Globais */
 body {
-    background-color: #0d0d0d;
+    background-color: #000000; /* Preto para o fundo geral */
     font-family: 'Arial', sans-serif;
-    color: #ffffff;
+    color: #e0e0e0; /* Cinza muito claro para o texto */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -13,41 +13,41 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #1a1a1a;
+    background-color: #1a2a3a; /* Azul pastel escuro */
     padding: 15px 30px;
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Contêiner Principal */
 .container {
     max-width: 1200px;
     padding: 30px;
-    background-color: #131313;
+    background-color: #1a2a3a; /* Azul pastel muito escuro */
     border-radius: 15px;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease;
     margin: 20px auto;
 }
 
 .container:hover {
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Cabeçalhos */
 h1 {
-    color: #00bfff;
+    color: #a3c2c9; /* Azul pastel claro */
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Parágrafos */
 p {
-    color: #cccccc;
+    color: #b0b0b0; /* Cinza claro */
     font-size: 1.2em;
     text-align: justify;
     margin-bottom: 30px;
@@ -57,25 +57,25 @@ p {
 form {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #1a1a1a;
+    background-color: #1a2a3a; /* Azul pastel muito escuro */
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Jobs */
 .job {
-    background-color: #1a1a1a;
-    color: #ffffff;
+    background-color: #1a2a3a; /* Azul pastel muito escuro */
+    color: #e0e0e0; /* Cinza muito claro */
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
 .job:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Tabelas */
@@ -88,8 +88,8 @@ form {
 }
 
 .table thead {
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: #1a3e6a; /* Azul pastel escuro */
+    color: #e0e0e0; /* Cinza muito claro */
 }
 
 .table th {
@@ -100,28 +100,28 @@ form {
 
 .table td {
     padding: 12px 15px;
-    color: #e0e0e0;
+    color: #e0e0e0; /* Cinza muito claro */
     font-size: 0.9em;
 }
 
 .table tbody tr {
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #333;
 }
 
 .table tbody tr.even-row {
-    background-color: #1f1f1f;
+    background-color: #1a2a3a; /* Azul pastel muito escuro */
 }
 
 .table tbody tr.odd-row {
-    background-color: #2c2c2c;
+    background-color: #2c3e50; /* Azul mais escuro */
 }
 
 .table tbody tr:hover {
-    background-color: #333333;
+    background-color: #34495e; /* Azul escuro ao passar o mouse */
 }
 
 .table td strong {
-    color: #00bfff;
+    color: #a3c2c9; /* Azul pastel claro */
 }
 
 /* Texto centralizado */
@@ -147,37 +147,37 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, #343a40 0%, #212529 100%); /* Gradiente vertical com transição suave */
-    color: #ffffff;
+    background: linear-gradient(180deg, #1a2a3a 0%, #1a3e6a 100%); /* Gradiente de azul pastel muito escuro para azul pastel escuro */
+    color: #e0e0e0; /* Cinza muito claro */
     padding-top: 20px;
-    border-right: 2px solid #495057;
+    border-right: 2px solid #1a3e6a; /* Azul pastel escuro */
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Sombra mais intensa para um efeito de profundidade */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     z-index: 1000;
     overflow-y: auto;
-    transform: translateX(0); /* Inicialmente visível */
+    transform: translateX(0);
 }
 
 /* Esconder a Barra Lateral */
 .sidebar.hidden {
-    transform: translateX(-100%); /* Esconde a barra lateral */
+    transform: translateX(-100%);
 }
 
 /* Cabeçalho da Barra Lateral */
 .sidebar-header {
     padding: 20px;
-    border-bottom: 2px solid #495057;
-    background: linear-gradient(180deg, #212529, #343a40); /* Gradiente para o cabeçalho */
+    border-bottom: 2px solid #1a3e6a; /* Azul pastel escuro */
+    background: linear-gradient(180deg, #1a3e6a, #1a2a3a); /* Gradiente de azul pastel escuro para azul pastel muito escuro */
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada no cabeçalho */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
 
 .sidebar-header h1 {
     font-size: 24px;
     margin: 0;
-    color: #00bfff; /* Cor vibrante para o título */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6); /* Sombra no texto mais intensa para maior destaque */
+    color: #a3c2c9; /* Azul pastel claro */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Links da Barra Lateral */
@@ -186,20 +186,20 @@ form {
     align-items: center;
     padding: 15px 20px;
     text-decoration: none;
-    color: #adb5bd;
+    color: #e0e0e0; /* Cinza muito claro */
     font-size: 18px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px; /* Canto arredondado */
+    border-radius: 12px;
     margin: 5px 0;
-    background: linear-gradient(145deg, #343a40, #495057); /* Gradiente sutil para os links */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra leve para os links */
+    background: linear-gradient(145deg, #2c3e50, #34495e); /* Gradiente azul mais escuro para azul escuro */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 .sidebar a:hover, .sidebar a.active {
-    background-color: #495057; /* Cor sólida ao passar o mouse */
-    color: #ffffff;
-    transform: translateX(8px); /* Deslocamento maior para indicar seleção */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada ao passar o mouse */
+    background-color: #34495e; /* Azul escuro ao passar o mouse */
+    color: #e0e0e0; /* Cinza muito claro */
+    transform: translateX(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Adicionando ícones */
@@ -211,8 +211,8 @@ form {
 /* Rodapé da Barra Lateral */
 .sidebar-footer {
     padding: 20px;
-    border-top: 2px solid #495057;
-    background: linear-gradient(180deg, #212529, #343a40); /* Gradiente para o rodapé */
+    border-top: 2px solid #1a3e6a; /* Azul pastel escuro */
+    background: linear-gradient(180deg, #1a2a3a 0%, #1a3e6a 100%); /* Gradiente de azul pastel muito escuro para azul pastel escuro */
     text-align: center;
     transition: background-color 0.3s ease;
 }
@@ -224,25 +224,25 @@ form {
     left: 20px;
     z-index: 1001;
     cursor: pointer;
-    background: linear-gradient(145deg, #020d1a, #00334d); /* Gradiente escuro para um efeito mais sofisticado */
-    color: #ffffff;
+    background: linear-gradient(145deg, #1a3e6a, #2c3e50); /* Gradiente azul pastel escuro para azul mais escuro */
+    color: #e0e0e0; /* Cinza muito claro */
     border: none;
     padding: 12px;
     border-radius: 50%;
     font-size: 24px;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Adiciona uma transição para transformação */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Sombra mais intensa para um efeito de profundidade */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .sidebar-toggle:hover {
-    background: linear-gradient(145deg, #00334d, #020d1a); /* Gradiente invertido ao passar o mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5); /* Sombra mais forte ao passar o mouse */
-    transform: scale(1.05); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+    background: linear-gradient(145deg, #2c3e50, #1a3e6a); /* Gradiente invertido ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
 }
 
 .sidebar-toggle:focus {
-    outline: none; /* Remove o contorno padrão */
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra sutil ao redor ao focar */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Barra de Pesquisa */
@@ -250,7 +250,7 @@ form {
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 500px;
+    max-width: 600px;
     margin: 20px auto;
 }
 
@@ -259,17 +259,17 @@ form {
     border-radius: 25px;
     padding: 12px 20px;
     font-size: 16px;
-    border: 1px solid #444;
-    background-color: #2c2c2c;
-    color: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #d0e3f0; /* Azul claro pastel para a borda */
+    background-color: #ffffff; /* Branco para o fundo */
+    color: #333333;
+    box-shadow: 0 4px 10px #d0e3f0;
     transition: all 0.3s ease;
 }
 
 .search-bar input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-color: #5b9bd5; /* Azul pastel claro ao focar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .search-bar button {
@@ -278,16 +278,16 @@ form {
     position: absolute;
     right: 0;
     border: none;
-    background-color: #007bff;
+    background-color: #5b9bd5; /* Azul pastel claro para o botão */
     color: #ffffff;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 12px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 8px #5b9bd5;
 }
 
 .search-bar button:hover {
-    background-color: #0056b3;
+    background-color: #004080; /* Azul escuro ao passar o mouse */
 }
 
 .search-bar button:focus {
@@ -297,32 +297,32 @@ form {
 /* Botão de Logout */
 .btn-logout {
     background: linear-gradient(145deg, #dc3545, #c82333); /* Gradiente vermelho */
-    color: #ffffff; /* Cor do texto e ícone */
+    color: #ffffff;
     border: none;
-    border-radius: 8px; /* Arredondar os cantos */
-    padding: 10px 20px; /* Ajustar o padding */
-    font-size: 14px; /* Tamanho da fonte */
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px; /* Espaçamento entre o ícone e o texto */
+    gap: 10px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    cursor: pointer; /* Cursor de mão para indicar que é clicável */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-logout svg {
-    width: 18px; /* Ajusta o tamanho do ícone */
+    width: 18px;
     height: 18px;
 }
 
 .btn-logout:hover {
     background: linear-gradient(145deg, #c82333, #dc3545); /* Gradiente invertido ao passar o mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao passar o mouse */
-    transform: translateY(-2px); /* Pequeno efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-logout:focus {
-    outline: none; /* Remove o contorno padrão */
-    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.4); /* Sombra vermelha mais sutil ao redor */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.4);
 }
