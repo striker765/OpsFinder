@@ -28,10 +28,5 @@ class Server(models.Model):
     escalonamento1 = models.CharField(max_length=255)
     escalonamento2 = models.CharField(max_length=255)
 
-
-    def __str__(self):
-        return self.server_name
-
-
     class Meta:
         db_table = 'servers'
