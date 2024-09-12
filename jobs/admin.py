@@ -14,5 +14,8 @@ admin.site.register(Job, JobAdmin)
 
 class ServerAdmin(admin.ModelAdmin):
     list_display = ('id', 'server_name', 'server_cliente', 'datacenter', 'plataforma', 'ip', 'criticidade', 'responsabilidade', 'escalonamento1', 'escalonamento2')
+    search_fields = ('id', 'server_name', 'server_cliente', 'datacenter', 'plataforma', 'ip', 'criticidade', 'responsabilidade', 'escalonamento1', 'escalonamento2')
+    list_filter = ('id', 'server_name', 'server_cliente', 'datacenter', 'plataforma', 'ip', 'criticidade', 'responsabilidade', 'escalonamento1', 'escalonamento2')
+    list_display_links = ('id', 'server_name', )
 
 admin.site.register(Server, ServerAdmin) 
