@@ -1,5 +1,5 @@
-{% if jobs is not None %}
-    {% if jobs %}
+{% if servers is not None %}
+    {% if servers %}
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
@@ -8,46 +8,46 @@
                 </tr>
             </thead>
             <tbody>
-                {% for job in jobs %}
+                {% for server in servers %}
                     {% if forloop.counter0|divisibleby:2 %}
                         <tr class="even-row">
                     {% else %}
                         <tr class="odd-row">
                     {% endif %}
-                        <td><strong>Nome do Job:</strong></td>
-                        <td>{{ job.job_name }}</td>
+                        <td><strong>Host Name:</strong></td>
+                        <td>{{ server.server_name }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>JOB STREAM:</strong></td>
-                        <td>{{ job.job_stream }}</td>
+                        <td><strong>Cliente :</strong></td>
+                        <td>{{ server.server_cliente }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>WORKSTATION:</strong></td>
-                        <td>{{ job.workstation }}</td>
+                        <td><strong>DataCenter:</strong></td>
+                        <td>{{ server.datacenter }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>1º RESPONSÁVEL:</strong></td>
-                        <td>{{ job.first_responsible }}</td>
+                        <td><strong>PlataForma:</strong></td>
+                        <td>{{ server.plataforma }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>2º RESPONSÁVEL:</strong></td>
-                        <td>{{ job.second_responsible }}</td>
-                    </tr>
-                    <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>3º RESPONSÁVEL:</strong></td>
-                        <td>{{ job.third_responsible }}</td>
-                    </tr>
-                    <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>HORÁRIO DE ACIONAMENTO:</strong></td>
-                        <td>{{ job.activation_time }}</td>
+                        <td><strong>IP:</strong></td>
+                        <td>{{ server.ip }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
                         <td><strong>CRITICIDADE:</strong></td>
-                        <td>{{ job.criticality }}</td>
+                        <td>{{ server.criticidade }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>DESCRIÇÃO:</strong></td>
-                        <td>{{ job.description }}</td>
+                        <td><strong>Responsabilidade:</strong></td>
+                        <td>{{ server.responsabilidade }}</td>
+                    </tr>
+                    <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
+                        <td><strong>Escalonamento 1:</strong></td>
+                        <td>{{ server.escalonamento1 }}</td>
+                    </tr>
+                    <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
+                        <td><strong>Escalonamento 2:</strong></td>
+                        <td>{{ server.escalonamento2 }}</td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>

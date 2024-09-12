@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib import admin
-from .models import Job
+from .models import Job , Server
 
 class JobAdmin(admin.ModelAdmin):
     list_display = ('id','job_name', 'job_stream', 'workstation', 'activation_time', 'criticality')
@@ -11,3 +11,8 @@ class JobAdmin(admin.ModelAdmin):
 
 admin.site.register(Job, JobAdmin)
 
+
+class ServerAdmin(admin.ModelAdmin):
+    list_display = ('id', 'server_name', 'server_cliente', 'datacenter', 'plataforma', 'ip', 'criticidade', 'responsabilidade', 'escalonamento1', 'escalonamento2')
+
+admin.site.register(Server, ServerAdmin) 

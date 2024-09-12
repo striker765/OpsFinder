@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-from django.db import models
 
 class Job(models.Model):
     job_name = models.CharField(max_length=255)
@@ -19,3 +17,16 @@ class Job(models.Model):
 
 
 
+class Server(models.Model):
+    server_name = models.CharField(max_length=255)
+    server_cliente = models.CharField(max_length=255)
+    datacenter = models.CharField(max_length=255)
+    plataforma = models.CharField(max_length=255)
+    ip = models.GenericIPAddressField()
+    criticidade = models.CharField(max_length=255)
+    responsabilidade = models.CharField(max_length=255)
+    escalonamento1 = models.CharField(max_length=255)
+    escalonamento2 = models.CharField(max_length=255)
+
+    class Meta:
+        db_table = 'servers'

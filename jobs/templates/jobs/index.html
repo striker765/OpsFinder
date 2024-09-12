@@ -17,12 +17,14 @@
             <h2>Menu</h2>
         </div>
         <ul class="sidebar-menu">
-            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="{% url 'admin:index' %}"><i class="fas fa-user-cog"></i> Admin</a></li>
+            <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="{% url 'admin:index' %} "><i class="fas fa-user-cog"></i> Admin</a></li>
+            <li><a href="{% url 'show_all_servers' %} "><i class="fas fa-user"></i>Tabela Server</a></li>
+            <li><a href="{% url 'show_all_jobs' %} "><i class="fas fa-user"></i>Tebala Jobs </a></li>
             <li><a href="#"><i class="fas fa-user"></i> Sobre</a></li>
             <li><a href="#"><i class="fas fa-question-circle"></i> Ajuda</a></li>
         </ul>
-        <div class="sidebar-footer">
+        <div class="sidebar-footer"> 
             <form action="{% url 'logout' %}" method="post">
                 {% csrf_token %}
                 <button type="submit" class="btn-logout">
@@ -52,13 +54,21 @@
             <form id="search-form" method="post" class="mb-4">
                 {% csrf_token %}
                 <div class="search-bar">
-                    <input type="text" name="job_name" placeholder="Nome do Job">
+                    <input type="text" name="search_query" placeholder="Nome do Job ou Servidor">
                     <button type="submit">🔍</button>
                 </div>
             </form>
 
+            <div id="server_results">
+                {% include 'jobs/server.html' %}
+
+            </div>
+
+
+
             <div id="job-results">
                 {% include 'jobs/results.html' %}
+
             </div>
         </div>
     </div>
