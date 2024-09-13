@@ -23,7 +23,7 @@ SECRET_KEY = ('django-insecure-@7fy1b8p9mw28_r94#a)8oymr2usv1&t#4(^8og4+wm+%_y(*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [] #    Lembrar de adicionar meu dominio
 
 
 # Application definition
