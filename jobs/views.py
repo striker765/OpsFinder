@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Server, Job
-
+from django.contrib.auth.decorators import login_required
+@login_required
 def search_jobs(request):
     if request.method == 'POST':
         search_query = request.POST.get('search_query', '')

@@ -19,7 +19,6 @@ def login_view(request):
     
     return render(request, 'usuarios/login.html')
 
-
 def logout(request):
     auth.logout(request)
     messages.success(request, 'Logout efetuado com sucess!')
