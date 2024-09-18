@@ -1,4 +1,4 @@
-OpsFinder
+
 OpsFinder é uma plataforma completa e eficiente que permite a equipes de TI encontrar facilmente procedimentos, jobs, hosts, servidores, e muito mais. Ele foi projetado para fornecer uma interface intuitiva para busca, gerenciamento e visualização de diversas operações críticas. Nossa aplicação foi implementada usando Django, hospedada com Docker e configurada para suportar servidores de alta performance, como Nginx e Gunicorn.
 
 Funcionalidades
