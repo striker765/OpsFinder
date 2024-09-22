@@ -15,13 +15,17 @@
 <body>
     <div class="sidebar" id="sidebar">
         <div class="sidebar-header">
-            <h2>Menu</h2>
+        </i><h2>Menu</h2>
         </div>
         <ul class="sidebar-menu">
             <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
+
             <li><a href="{% url 'admin:index' %} "><i class="fas fa-user-cog"></i> Admin</a></li>
+
             <li><a href="{% url 'show_all_servers' %} "><i class="fas fa-server"></i>All Server</a></li>
+
             <li><a href="{% url 'show_all_jobs' %} "><i class="fas fa-table"></i>All Jobs </a></li>
+            
             <li><a href="#"><i class="fas fa-question-circle"></i> Ajuda</a></li>
         </ul>
         <div class="sidebar-footer"> 
@@ -45,7 +49,7 @@
 
     <div class="content">
         <header>
-            <h1 class="mt-4 mb-4">Pesquisa Procedimentos</h1>
+            <h1 class="mt-4 mb-4">Pesquise Procedimentos</h1>
         </header>
         <div class="container">
             <form id="search-form" method="post" class="mb-4">
