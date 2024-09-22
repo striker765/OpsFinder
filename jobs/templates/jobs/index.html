@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Search</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/five-icons/dist/five-icons.min.css">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
     {% load static %}
@@ -19,9 +20,8 @@
         <ul class="sidebar-menu">
             <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
             <li><a href="{% url 'admin:index' %} "><i class="fas fa-user-cog"></i> Admin</a></li>
-            <li><a href="{% url 'show_all_servers' %} "><i class="fas fa-user"></i>Tabela Server</a></li>
-            <li><a href="{% url 'show_all_jobs' %} "><i class="fas fa-user"></i>Tebala Jobs </a></li>
-            <li><a href="#"><i class="fas fa-user"></i> Sobre</a></li>
+            <li><a href="{% url 'show_all_servers' %} "><i class="fas fa-server"></i>All Server</a></li>
+            <li><a href="{% url 'show_all_jobs' %} "><i class="fas fa-table"></i>All Jobs </a></li>
             <li><a href="#"><i class="fas fa-question-circle"></i> Ajuda</a></li>
         </ul>
         <div class="sidebar-footer"> 
@@ -48,13 +48,10 @@
             <h1 class="mt-4 mb-4">Pesquisa Procedimentos</h1>
         </header>
         <div class="container">
-            <p style="font-size: 1.2em; color: #f0f0f0; text-align: center; margin-bottom: 20px; font-weight: bold;">
-                Use a <span style=" font-weight: bold;">barra de pesquisa</span> abaixo para pesquisar:
-            </p>
             <form id="search-form" method="post" class="mb-4">
                 {% csrf_token %}
                 <div class="search-bar">
-                    <input type="text" name="search_query" placeholder="Nome do Job ou Servidor">
+                    <input type="text" name="search_query" placeholder="Busque...">
                     <button type="submit">🔍</button>
                 </div>
             </form>
