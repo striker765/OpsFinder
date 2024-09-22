@@ -13,21 +13,21 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #1a2a3a; /* Azul pastel escuro */
+    background-color: #00052c; 
     padding: 15px 30px;
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 12px rgb(0, 0, 0);
 }
 
 /* Contêiner Principal */
 .container {
-    max-width: 1200px;
+    max-width: 1400px;       /* ajuste tamanho geral da tabela */
     padding: 30px;
-    background-color: #1a2a3a; /* Azul pastel muito escuro */
+    background-color: #00052c; 
     border-radius: 15px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease;
-    margin: 20px auto;
+    margin: 5px auto;
 }
 
 .container:hover {
@@ -36,7 +36,7 @@ header {
 
 /* Cabeçalhos */
 h1 {
-    color: #a3c2c9; /* Azul pastel claro */
+    color: #e0e0e0; 
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 30px;
@@ -47,7 +47,7 @@ h1 {
 
 /* Parágrafos */
 p {
-    color: #b0b0b0; /* Cinza claro */
+    color: #b0b0b0; 
     font-size: 1.2em;
     text-align: justify;
     margin-bottom: 30px;
@@ -57,15 +57,15 @@ p {
 form {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #1a2a3a; /* Azul pastel muito escuro */
+    background-color: #00052c; 
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Jobs */
 .job {
-    background-color: #1a2a3a; /* Azul pastel muito escuro */
-    color: #e0e0e0; /* Cinza muito claro */
+    background-color: #00052c; 
+    color: #e0e0e0; 
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
@@ -82,14 +82,14 @@ form {
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
+    margin: 40px 0;    /* Ajuste tamanho Tabela resultado */
     border-radius: 10px;
     overflow: hidden;
 }
 
 .table thead {
-    background-color: #1a3e6a; /* Azul pastel escuro */
-    color: #e0e0e0; /* Cinza muito claro */
+    background-color: #00052c; 
+    color: #e0e0e0; 
 }
 
 .table th {
@@ -100,7 +100,7 @@ form {
 
 .table td {
     padding: 12px 15px;
-    color: #e0e0e0; /* Cinza muito claro */
+    color: #e0e0e0; 
     font-size: 0.9em;
 }
 
@@ -109,19 +109,19 @@ form {
 }
 
 .table tbody tr.even-row {
-    background-color: #1a2a3a; /* Azul pastel muito escuro */
+    background-color: #00052c; 
 }
 
 .table tbody tr.odd-row {
-    background-color: #2c3e50; /* Azul mais escuro */
+    background-color: #12184dea;
 }
 
 .table tbody tr:hover {
-    background-color: #34495e; /* Azul escuro ao passar o mouse */
+    background-color: #00052c; 
 }
 
 .table td strong {
-    color: #a3c2c9; /* Azul pastel claro */
+    color: #d6dfe0;
 }
 
 /* Texto centralizado */
@@ -147,12 +147,12 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    background: linear-gradient(180deg, #1a2a3a 0%, #1a3e6a 100%); /* Gradiente de azul pastel muito escuro para azul pastel escuro */
-    color: #e0e0e0; /* Cinza muito claro */
+    background: linear-gradient(180deg, #00052c 0%, #00052c 100%); 
+    color: #ffffff; 
     padding-top: 20px;
-    border-right: 2px solid #1a3e6a; /* Azul pastel escuro */
+    border-right: 2px solid #00052c;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 20px rgba(247, 246, 246, 0.212);
     z-index: 1000;
     overflow-y: auto;
     transform: translateX(0);
@@ -166,17 +166,16 @@ form {
 /* Cabeçalho da Barra Lateral */
 .sidebar-header {
     padding: 20px;
-    border-bottom: 2px solid #1a3e6a; /* Azul pastel escuro */
-    background: linear-gradient(180deg, #1a3e6a, #1a2a3a); /* Gradiente de azul pastel escuro para azul pastel muito escuro */
+    border-bottom: 2px solid #00052c; 
+    background: linear-gradient(180deg, #00052c, #00052c); 
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
     transition: background-color 0.3s ease;
 }
 
 .sidebar-header h1 {
     font-size: 24px;
     margin: 0;
-    color: #a3c2c9; /* Azul pastel claro */
+    color: #00052c; /* Azul pastel claro */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
@@ -186,18 +185,18 @@ form {
     align-items: center;
     padding: 15px 20px;
     text-decoration: none;
-    color: #e0e0e0; /* Cinza muito claro */
+    color: #ffffff; /* Cinza muito claro */
     font-size: 18px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 12px;
     margin: 5px 0;
-    background: linear-gradient(145deg, #2c3e50, #34495e); /* Gradiente azul mais escuro para azul escuro */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #2c3e50, #00052c); /* Gradiente azul mais escuro para azul escuro */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
 }
 
 .sidebar a:hover, .sidebar a.active {
-    background-color: #34495e; /* Azul escuro ao passar o mouse */
-    color: #e0e0e0; /* Cinza muito claro */
+    background-color: #055fb9; /* Azul escuro ao passar o mouse */
+    color: #f5f5f5; /* Cinza muito claro */
     transform: translateX(8px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -211,8 +210,8 @@ form {
 /* Rodapé da Barra Lateral */
 .sidebar-footer {
     padding: 20px;
-    border-top: 2px solid #1a3e6a; /* Azul pastel escuro */
-    background: linear-gradient(180deg, #1a2a3a 0%, #1a3e6a 100%); /* Gradiente de azul pastel muito escuro para azul pastel escuro */
+    border-top: 2px solid #00052c; /* Azul pastel escuro */
+    background: linear-gradient(180deg, #00052c 0%, #00052c 100%); /* Gradiente de azul pastel muito escuro para azul pastel escuro */
     text-align: center;
     transition: background-color 0.3s ease;
 }
@@ -224,7 +223,7 @@ form {
     left: 20px;
     z-index: 1001;
     cursor: pointer;
-    background: linear-gradient(145deg, #1a3e6a, #2c3e50); /* Gradiente azul pastel escuro para azul mais escuro */
+    background: linear-gradient(145deg, #00052c, #00052c); /* Gradiente azul pastel escuro para azul mais escuro */
     color: #e0e0e0; /* Cinza muito claro */
     border: none;
     padding: 12px;
@@ -250,8 +249,8 @@ form {
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 600px;
-    margin: 20px auto;
+    max-width: 900px;
+    margin: 10px auto;
 }
 
 .search-bar input {
@@ -261,8 +260,8 @@ form {
     font-size: 16px;
     border: 1px solid #d0e3f0; /* Azul claro pastel para a borda */
     background-color: #ffffff; /* Branco para o fundo */
-    color: #333333;
-    box-shadow: 0 4px 10px #d0e3f0;
+    color: #00052c;
+    box-shadow: 0 4px 10px #01118b;
     transition: all 0.3s ease;
 }
 

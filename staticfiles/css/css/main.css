@@ -47,7 +47,7 @@ a {
 	font-family: Poppins-Regular;
 	font-size: 14px;
 	line-height: 1.7;
-	color: #666666;
+	color: #1b1b1b;
 	margin: 0px;
 	transition: all 0.4s;
 	-webkit-transition: all 0.4s;
@@ -61,11 +61,11 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #6a7dfe;
-  color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  color: -o-linear-gradient(left, #21d4fd, #b721ff);
-  color: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  color: linear-gradient(left, #21d4fd, #b721ff);
+  color: #0f2be4;
+  color: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
+  color: -o-linear-gradient(left, #0c3fe7, #b721ff);
+  color: -moz-linear-gradient(left, #0c3fe7, #b721ff);
+  color: linear-gradient(left, #0c3fe7, #b721ff);
 }
 
 /*---------------------------------------------*/
@@ -175,17 +175,17 @@ iframe {
   justify-content: center;
   align-items: center;
   padding: 15px;
-  background: #131313;  
+  background: #000000;  
 }
 
 .wrap-login100 {
   width: 390px;
-  background: #0d0d0de7;
+  background: #00052c;
   border-radius: 10px;
   overflow: hidden;
   padding: 77px 55px 33px 55px;
 
-  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.842);
   -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
@@ -204,7 +204,7 @@ iframe {
   display: block;
   font-family: Poppins-Bold;
   font-size: 30px;
-  color: #333333;
+  color: #cecdcd;
   line-height: 1.2;
   text-align: center;
 }
@@ -218,14 +218,14 @@ iframe {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid #adadad;
+  border-bottom: 2px solid #ffffff;
   margin-bottom: 37px;
 }
 
 .input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #555555;
+  color: #ececec;
   line-height: 1.2;
 
   display: block;
@@ -261,16 +261,16 @@ iframe {
   transition: all 0.4s;
 
   background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  background: -o-linear-gradient(left, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  background: linear-gradient(left, #21d4fd, #b721ff);
+  background: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
+  background: -o-linear-gradient(left, #0c3fe7, #b721ff);
+  background: -moz-linear-gradient(left, #0c3fe7, #b721ff);
+  background: linear-gradient(left, #0c3fe7, #b721ff);
 }
 
 .focus-input100::after {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #999999;
+  color: #e2e2e2;
   line-height: 1.2;
 
   content: attr(data-placeholder);
@@ -328,18 +328,18 @@ iframe {
 
 .btn-show-pass:hover {
   color: #6a7dfe;
-  color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  color: -o-linear-gradient(left, #21d4fd, #b721ff);
-  color: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  color: linear-gradient(left, #21d4fd, #b721ff);
+  color: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
+  color: -o-linear-gradient(left, #0c3fe7, #b721ff);
+  color: -moz-linear-gradient(left, #0c3fe7, #b721ff);
+  color: linear-gradient(left, #0c3fe7, #b721ff);
 }
 
 .btn-show-pass.active {
   color: #6a7dfe;
-  color: -webkit-linear-gradient(left, #21d4fd, #b721ff);
-  color: -o-linear-gradient(left, #21d4fd, #b721ff);
-  color: -moz-linear-gradient(left, #21d4fd, #b721ff);
-  color: linear-gradient(left, #21d4fd, #b721ff);
+  color: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
+  color: -o-linear-gradient(left, #0c3fe7, #b721ff);
+  color: -moz-linear-gradient(left, #0c3fe7, #b721ff);
+  color: linear-gradient(left, #0c3fe7, #b721ff);
 }
 
 
@@ -366,17 +366,17 @@ iframe {
   overflow: hidden;
   margin: 0 auto;
 }
-
+/*[ Login ]*/
 .login100-form-bgbtn {
   position: absolute;
   z-index: -1;
   width: 300%;
   height: 100%;
   background: #a64bf4;
-  background: -webkit-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: -o-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: -moz-linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
-  background: linear-gradient(right, #21d4fd, #b721ff, #21d4fd, #b721ff);
+  background: -webkit-linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
+  background: -o-linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
+  background: -moz-linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
+  background: linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
   top: 0;
   left: -100%;
 
