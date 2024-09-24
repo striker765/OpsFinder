@@ -25,3 +25,7 @@ def show_all_jobs(request):
     jobs = Job.objects.all()
     return render( request,'jobs/index.html', {'jobs': jobs})
 
+
+def ajuda(request):
+    return render(request, 'jobs/ajuda.html')
+

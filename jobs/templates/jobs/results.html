@@ -14,39 +14,43 @@
                     {% else %}
                         <tr class="odd-row">
                     {% endif %}
-                        <td><strong>Nome do Job:</strong></td>
+                        <td><strong>Nome do Job :</strong></td>
                         <td>{{ job.job_name }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>JOB STREAM:</strong></td>
+                        <td><strong>JOB STREAM :</strong></td>
                         <td>{{ job.job_stream }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>WORKSTATION:</strong></td>
+                        <td><strong>WORKSTATION :</strong></td>
                         <td>{{ job.workstation }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>1º RESPONSÁVEL:</strong></td>
+                        <td><strong>FERRAMENTA :</strong></td>
+                        <td>{{ job.ferramenta }}</td>
+                    </tr>
+                    <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
+                        <td><strong>1º RESPONSÁVEL :</strong></td>
                         <td>{{ job.first_responsible }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>2º RESPONSÁVEL:</strong></td>
+                        <td><strong>2º RESPONSÁVEL :</strong></td>
                         <td>{{ job.second_responsible }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>3º RESPONSÁVEL:</strong></td>
+                        <td><strong>3º RESPONSÁVEL :</strong></td>
                         <td>{{ job.third_responsible }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>HORÁRIO DE ACIONAMENTO:</strong></td>
+                        <td><strong>HORÁRIO DE ACIONAMENTO :</strong></td>
                         <td>{{ job.activation_time }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>CRITICIDADE:</strong></td>
+                        <td><strong>CRITICIDADE :</strong></td>
                         <td>{{ job.criticality }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>DESCRIÇÃO:</strong></td>
+                        <td><strong>DESCRIÇÃO :</strong></td>
                         <td>{{ job.description }}</td>
                     </tr>
                     <tr>

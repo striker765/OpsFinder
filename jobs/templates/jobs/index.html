@@ -20,13 +20,15 @@
         <ul class="sidebar-menu">
             <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
 
+            <li><a href="{% url 'dashboard' %}" ><i class="fas fa-dashboard"></i>Dashboard</a></li>
+
             <li><a href="{% url 'admin:index' %} "><i class="fas fa-user-cog"></i> Admin</a></li>
 
             <li><a href="{% url 'show_all_servers' %} "><i class="fas fa-server"></i>All Server</a></li>
 
             <li><a href="{% url 'show_all_jobs' %} "><i class="fas fa-table"></i>All Jobs </a></li>
             
-            <li><a href="#"><i class="fas fa-question-circle"></i> Ajuda</a></li>
+            <li><a href="{% url 'ajuda' %}"><i class="fas fa-question-circle"></i> Ajuda</a></li>
         </ul>
         <div class="sidebar-footer"> 
             <form action="{% url 'logout' %}" method="post">
@@ -65,7 +67,6 @@
             </div>
             <div id="job-results">
                 {% include 'jobs/results.html' %}
-
             </div>
         </div>
     </div>

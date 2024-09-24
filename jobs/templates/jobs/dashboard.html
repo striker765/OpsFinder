@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'static/css/style.css' %}">
+    <style>
+        #logContainer {
+            background-color: #000000;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            max-height: 400px;
+            overflow-y: auto;
+            border-radius: 0.25rem;
+        }
+
+        #logContainer div {
+            padding: 5px 10px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <button class="btn btn-primary" onclick="fetchLogData()">Atualizar Dados</button>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Logs</h2>
+                <div id="logContainer" class="bg-light border p-3">
+                    <!-- Logs serão inseridos aqui -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <canvas id="logChart" width="400" height="200"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const ctx = document.getElementById('logChart').getContext('2d');
+        const logChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: [],  // Labels preenchidos dinamicamente
+                datasets: [{
+                    label: 'Contagem de Logs',
+                    data: [],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Número de Logs'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Níveis de Log'
+                        }
+                    }
+                }
+            }
+        });
+    
+        async function fetchLogData() {
+            const response = await fetch('/dashboard/log_data/');
+            const data = await response.json();
+    
+            if (data.error) {
+                console.error(data.error);
+                return;
+            }
+    
+            // Atualiza os dados do gráfico
+            logChart.data.labels = data.labels;
+            logChart.data.datasets[0].data = data.data;
+            logChart.update();
+        }
+    
+        // Chama a função a cada 5 segundos
+        setInterval(fetchLogData, 5000);
+    
+        // Chamada inicial para carregar os dados
+        fetchLogData();
+    </script>
+        </body>
+</html>

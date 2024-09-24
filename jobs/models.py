@@ -5,6 +5,7 @@ class Job(models.Model):
     job_name = models.CharField(max_length=255)
     job_stream = models.CharField(max_length=255, blank=True)
     workstation = models.CharField(max_length=255, blank=True)
+    ferramenta = models.CharField(max_length=255 , blank=True)
     first_responsible = models.CharField(max_length=255, blank=True)
     second_responsible = models.CharField(max_length=255, blank=True)
     third_responsible = models.CharField(max_length=255, blank=True)
