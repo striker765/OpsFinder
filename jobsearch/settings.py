@@ -32,7 +32,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*'] #    Lembrar de adicionar meu dominio
+ALLOWED_HOSTS = ['127.0.0.1', '10.205.199.21'] #    Lembrar de adicionar meu dominio
 
 
 # Application definition

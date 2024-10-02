@@ -26,8 +26,8 @@
                         <td>{{ job.workstation }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
-                        <td><strong>FERRAMENTA :</strong></td>
-                        <td>{{ job.ferramenta }}</td>
+                        <td><strong>APLICACAO :</strong></td>
+                        <td>{{ job.APLICACAO  }}</td>
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
                         <td><strong>1º RESPONSÁVEL :</strong></td>
@@ -51,7 +51,7 @@
                     </tr>
                     <tr class="{{ forloop.counter0|divisibleby:2|yesno:'even-row,odd-row' }}">
                         <td><strong>DESCRIÇÃO :</strong></td>
-                        <td>{{ job.description }}</td>
+                        <td>{{ job.descricao }}</td>
                     </tr>
                     <tr>
                         <td colspan="2"></td>
