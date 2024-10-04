@@ -59,16 +59,32 @@
                     <button type="submit">🔍</button>
                 </div>
             </form>
-
+    
             <div id="server_results">
                 {% include 'jobs/server.html' %}
             </div>
             <div id="job-results">
                 {% include 'jobs/results.html' %}
             </div>
+            <div id="Cc_fast">
+                {% include 'jobs/Cc_fast.html' %}
+            </div>
+            
+            <div class="mb-4">
+                <form action="" method="get" class="form-inline">
+                    <label for="num_display" class="mr-2">Mostrar:</label>
+                    <select name="num_display" id="num_display" class="form-control mr-3">
+                        <option value="5" {% if request.GET.num_display == '5' %}selected{% endif %}>5</option>
+                        <option value="10" {% if request.GET.num_display == '10' %}selected{% endif %}>10</option>
+                        <option value="20" {% if request.GET.num_display == '20' %}selected{% endif %}>20</option>
+                        <option value="all" {% if request.GET.num_display == 'all' %}selected{% endif %}>Todos</option>
+                    </select>
+                    <button type="submit" class="btn btn-success">Aplicar</button>
+                </form>
+            </div>
         </div>
     </div>
-
+    
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
