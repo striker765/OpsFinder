@@ -15,13 +15,13 @@
     <div class="d-flex">
         <nav class="sidebar" id="sidebar">
             <div class="sidebar-header">
-                <h2>Menu</h2>
             </div>
             <ul class="sidebar-menu">
                 <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
                 <li><a href="{% url 'admin:index' %}"><i class="fas fa-user-cog"></i> Admin</a></li>
-                <li><a href="{% url 'all_servers' %}"><i class="fas fa-server"></i> All Server</a></li>
-                <li><a href="{% url 'all_jobs' %}"><i class="fas fa-table"></i> All Jobs</a></li>
+                <li><a href="{% url 'all_servers' %}"><i class="fas fa-server"></i> Servers C&C</a></li>
+                <li><a href="{% url 'all_FastShop' %}"><i class="fas fa-server"></i>Servers Fast</a></li>
+                <li><a href="{% url 'all_jobs' %}"><i class="fas fa-table"></i> TWS</a></li>
                 <li><a href="{% url 'ajuda' %}"><i class="fas fa-question-circle"></i> Ajuda</a></li>
             </ul>
             <div class="sidebar-footer"> 
@@ -42,7 +42,7 @@
                 <form id="search-form" method="post" class="mb-4">
                     {% csrf_token %}
                     <div class="search-bar d-flex justify-content-center">
-                        <input type="text" name="search_query" placeholder="Busque..." class="form-control me-2" autocomplete="off">
+                        <input type="text" name="search_query" placeholder="Busque..." class="form-control me-2" autocomplete="on">
                         <button type="submit" class="btn btn-primary">🔍</button>
                     </div>
                 </form>
@@ -78,7 +78,7 @@
                         </ul>
                     </nav>
                 </div>
-                
+
                 <div id="job-results">
                     {% include 'jobs/results.html' %}
                     

@@ -7,7 +7,6 @@
     <title>Ajuda - OpsFinder</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"> 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/five-icons/dist/five-icons.min.css">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -17,82 +16,79 @@
     </header>
 
     <div class="container mt-4">
-        <ul class="sidebar-menu">
-            <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
-        <ul
-        <h2>Bem-vindo à Ajuda do OpsFinder</h2>
-        <p>Encontre aqui as orientações para utilizar as principais funcionalidades da plataforma.</p>
+        <div class="row">
+            <nav class="col-md-3">
+                <ul class="list-group sidebar-menu">
+                    <li class="list-group-item"><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
+                </ul>
+            </nav>
 
-        <h3>1. Acessando a Plataforma</h3>
-        <p>
-            Ao acessar a plataforma, utilize o <strong>Menu Lateral</strong> para navegar entre as principais funcionalidades:
-        </p>
-        <ul>
-            <li><strong>Home:</strong> Página inicial com opções de busca de procedimentos e servidores.</li>
-            <li><strong>Admin:</strong> Painel de administração para gerenciar usuários, jobs, servidores e procedimentos.</li>
-            <li><strong>All Server:</strong> Lista de todos os servidores.</li>
-            <li><strong>All Jobs:</strong> Todos os procedimentos e jobs cadastrados.</li>
-            <li><strong>Ajuda:</strong> Seção de ajuda.</li>
-            <li><strong>Logout:</strong> Para encerrar sua sessão com segurança.</li>
-        </ul>
+            <div class="col-md-9">
+                <h2>Bem-vindo à Ajuda do OpsFinder</h2>
+                <p>Encontre aqui as orientações para utilizar as principais funcionalidades da plataforma.</p>
 
-        <h3>2. Buscando Procedimentos </h3>
-        <p>
-            Utilize o campo de busca na página inicial para encontrar procedimentos:
-        </p>
-        <ol>
-            <li>Digite a palavra-chave no campo de busca.</li>
-            <li>Clique no botão <strong>🔍</strong> ou pressione <strong>Enter</strong>.</li>
-            <li>Os resultados aparecerão automaticamente.</li>
-        </ol>
+                <h3>1. Acessando a Plataforma</h3>
+                <p>
+                    Ao acessar a plataforma, utilize o <strong>Menu Lateral</strong> para navegar entre as principais funcionalidades:
+                </p>
+                <ul>
+                    <li><strong>Home:</strong> Página inicial com opções de busca de procedimentos e servidores.</li>
+                    <li><strong>Admin:</strong> Painel de administração para gerenciar usuários, jobs, servidores e procedimentos.</li>
+                    <li><strong>All Server:</strong> Lista de todos os servidores.</li>
+                    <li><strong>All Jobs:</strong> Todos os procedimentos e jobs cadastrados.</li>
+                    <li><strong>Ajuda:</strong> Seção de ajuda.</li>
+                    <li><strong>Logout:</strong> Para encerrar sua sessão com segurança.</li>
+                </ul>
 
-        <h3>3. Acesso ao Painel de Administração</h3>
-        <p>
-            Clique em <strong>Admin</strong> no menu lateral para acessar o painel administrativo e realizar:
-        </p>
-        <ul>
-            <li>CRUD de usuários.</li>
-            <li>CRUD de procedimentos e jobs-TWS.</li>
-            <li>CRUD de procedimentos e servidores.</li>
+                <h3>2. Buscando Procedimentos</h3>
+                <p>Utilize o campo de busca na página inicial para encontrar procedimentos:</p>
+                <ol>
+                    <li>Digite a palavra-chave no campo de busca.</li>
+                    <li>Clique no botão <strong>🔍</strong> ou pressione <strong>Enter</strong>.</li>
+                    <li>Os resultados aparecerão automaticamente.</li>
+                </ol>
 
-        </ul>
+                <h3>3. Acesso ao Painel de Administração</h3>
+                <p>Clique em <strong>Admin</strong> no menu lateral para acessar o painel administrativo e realizar:</p>
+                <ul>
+                    <li>CRUD de usuários.</li>
+                    <li>CRUD de procedimentos e jobs-TWS.</li>
+                    <li>CRUD de procedimentos e servidores.</li>
+                </ul>
 
-        <h3>4. Gerenciamento de Jobs e Procedimentos</h3>
-        <p>
-            Acesse a lista completa de jobs no menu <strong>All Jobs</strong> e realize as seguintes ações:
-        </p>
-        <ul>
-            <li>Adicionar novos procedimentos ou jobs.</li>
-            <li>Editar e atualizar informações de procedimentos existentes.</li>
-            <li>Excluir procedimentos obsoletos.</li>
-        </ul>
+                <h3>4. Gerenciamento de Jobs e Procedimentos</h3>
+                <p>Acesse a lista completa de jobs no menu <strong>All Jobs</strong> e realize as seguintes ações:</p>
+                <ul>
+                    <li>Adicionar novos procedimentos ou jobs.</li>
+                    <li>Editar e atualizar informações de procedimentos existentes.</li>
+                    <li>Excluir procedimentos obsoletos.</li>
+                </ul>
 
-        <h3>5. Gerenciamento de Servidores</h3>
-        <p>
-            Acesse a lista completa de servidores no menu <strong>All Server</strong> e realize as seguintes ações:
-        </p>
-        <ul>
-            <li>Adicionar novos servidores.</li>
-            <li>Editar e atualizar informações de servidores existentes.</li>
-            <li>Excluir servidores obsoletos ou inativos.</li>
-        </ul>
+                <h3>5. Gerenciamento de Servidores</h3>
+                <p>Acesse a lista completa de servidores no menu <strong>All Server</strong> e realize as seguintes ações:</p>
+                <ul>
+                    <li>Adicionar novos servidores.</li>
+                    <li>Editar e atualizar informações de servidores existentes.</li>
+                    <li>Excluir servidores obsoletos ou inativos.</li>
+                </ul>
 
-        <h3>5. Logout</h3>
-        <p>
-            Para finalizar sua sessão de forma segura, clique no botão <strong>Logout</strong> no menu lateral.
-        </p>
+                <h3>6. Logout</h3>
+                <p>Para finalizar sua sessão de forma segura, clique no botão <strong>Logout</strong> no menu lateral.</p>
 
-        <h3>6. Dúvidas ou Problemas?</h3>
-        <p>
-            Caso encontre algum problema ou tenha dúvidas, entre em contato com o administrador ou a equipe de suporte.
-        </p>
-        <h3>6. Contato dos Administradores</h3>
-        <p>
-            Caso precise de suporte ou tenha dúvidas, entre em contato com os administradores:
-        </p>
-        <ul>
-            <li>Thiago Giovanni Bosco - (19) 98745-5492</li>
-        </ul>
+                <h3>7. Dúvidas ou Problemas?</h3>
+                <p>Caso encontre algum problema ou tenha dúvidas, entre em contato com o administrador ou a equipe de suporte.</p>
+                
+                <h3>8. Contato dos Administradores</h3>
+                <p>Caso precise de suporte ou tenha dúvidas, entre em contato com os administradores:</p>
+                <ul>
+                    <li>Thiago Giovanni Bosco - (19) 98745-5492</li>
+                </ul>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 OpsFinder. Todos os direitos reservados.</p>
+    </footer>
 </body>
 </html>

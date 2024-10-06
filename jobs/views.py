@@ -54,9 +54,25 @@ def show_all_servers(request):
         'num_display': num_display,
         'jobs': [],  
         'message': "",  
-    })
+})
 @login_required
 def ajuda(request):
     return render(request, 'jobs/ajuda.html')
 
 
+@login_required
+def show_all_fastshop(request):
+    servidores_fastshop = Servidores_FastShop.objects.all()  
+    
+    num_display = request.GET.get('num_display', 5)
+    paginator = Paginator(servidores_fastshop, int(num_display))
+
+    page_number = request.GET.get('page')
+    fastshop_page = paginator.get_page(page_number)
+
+    return render(request, 'jobs/index.html', {
+        'Servidores_FastShop': fastshop_page,
+        'num_display': num_display,
+        'jobs': [],  
+        'message': "",  
+ })
