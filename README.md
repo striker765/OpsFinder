@@ -92,6 +92,4 @@ Integração com ferramentas de monitoramento, como Zabbix e Grafana.
 
 
 
-
-![image](https://github.com/user-attachments/assets/8354bebe-1a94-432c-ac21-9cb8fba8084b)
-
+![image](https://github.com/user-attachments/assets/e297023f-6d0a-4d41-a7ea-78b57763dc41)
