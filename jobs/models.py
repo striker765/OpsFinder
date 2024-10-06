@@ -15,3 +15,4 @@ class Job(models.Model):
     def __str__(self):
         return self.job_name or "Nome não definido"
 
+from servidores.models import Servidores_CC, Servidores_FastShop

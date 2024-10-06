@@ -18,9 +18,10 @@
             </div>
             <ul class="sidebar-menu">
                 <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'dashboard' %}"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="{% url 'admin:index' %}"><i class="fas fa-user-cog"></i> Admin</a></li>
                 <li><a href="{% url 'all_servers' %}"><i class="fas fa-server"></i> Servers C&C</a></li>
-                <li><a href="{% url 'all_FastShop' %}"><i class="fas fa-server"></i>Servers Fast</a></li>
+                <li><a href="{% url 'all_FastShop' %}"><i class="fas fa-server"></i> Servers Fast</a></li>
                 <li><a href="{% url 'all_jobs' %}"><i class="fas fa-table"></i> TWS</a></li>
                 <li><a href="{% url 'ajuda' %}"><i class="fas fa-question-circle"></i> Ajuda</a></li>
             </ul>
@@ -49,7 +50,6 @@
 
                 <div id="server_results">
                     {% include 'jobs/server.html' %}
-                    
                     <!-- Paginação para servidores -->
                     <nav aria-label="Navegação de página para servidores" class="mt-4">
                         <ul class="pagination justify-content-center">
@@ -81,7 +81,6 @@
 
                 <div id="job-results">
                     {% include 'jobs/results.html' %}
-                    
                     <!-- Paginação para jobs -->
                     <nav aria-label="Navegação de página para jobs" class="mt-4">
                         <ul class="pagination justify-content-center">
@@ -113,6 +112,13 @@
 
                 <div id="Cc_fast">
                     {% include 'jobs/Cc_fast.html' %}
+                </div>
+
+                <!-- Renderiza o conteúdo do dashboard se estiver na página do dashboard -->
+                <div id="dashboard-content">
+                    {% if request.path == '/dashboard/' %}
+                        {% include 'jobs/dashboard.html' %}
+                    {% endif %}
                 </div>
             </div>
         </main>

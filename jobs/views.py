@@ -3,7 +3,7 @@ from .models import Job
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
 from servidores.models import Servidores_FastShop, Servidores_CC 
-
+from django.contrib.auth.models import User
 @login_required
 def search_jobs(request):
     search_query = request.POST.get('search_query', '') if request.method == 'POST' else ''
@@ -76,3 +76,24 @@ def show_all_fastshop(request):
         'jobs': [],  
         'message': "",  
  })
+
+
+@login_required
+def dashboard(request):
+    total_users = User.objects.count()
+    total_servidores_cc = Servidores_CC.objects.count()
+    total_servidores_fastshop = Servidores_FastShop.objects.count()
+    total_jobs = Job.objects.count()
+
+    # Calcular total de servidores
+    total_servidores = total_servidores_cc + total_servidores_fastshop
+
+    context = {
+        'total_users': total_users,
+        'total_servidores_cc': total_servidores_cc,
+        'total_servidores_fastshop': total_servidores_fastshop,
+        'total_jobs': total_jobs,
+        'total_servidores': total_servidores,  # Adicione isso
+    }
+    
+    return render(request, 'jobs/dashboard.html', context)
