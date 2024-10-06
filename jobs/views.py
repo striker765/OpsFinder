@@ -85,15 +85,11 @@ def dashboard(request):
     total_servidores_fastshop = Servidores_FastShop.objects.count()
     total_jobs = Job.objects.count()
 
-    # Calcular total de servidores
-    total_servidores = total_servidores_cc + total_servidores_fastshop
-
     context = {
         'total_users': total_users,
         'total_servidores_cc': total_servidores_cc,
         'total_servidores_fastshop': total_servidores_fastshop,
         'total_jobs': total_jobs,
-        'total_servidores': total_servidores,  # Adicione isso
     }
     
     return render(request, 'jobs/dashboard.html', context)
