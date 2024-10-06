@@ -12,118 +12,112 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <div class="sidebar" id="sidebar">
-        <div class="sidebar-header">
-            <h2>Menu</h2>
-        </div>
-        <ul class="sidebar-menu">
-            <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="{% url 'admin:index' %}"><i class="fas fa-user-cog"></i> Admin</a></li>
-            <li><a href="{% url 'all_servers' %}"><i class="fas fa-server"></i> All Server</a></li>
-            <li><a href="{% url 'all_jobs' %}"><i class="fas fa-table"></i> All Jobs</a></li>
-            <li><a href="{% url 'ajuda' %}"><i class="fas fa-question-circle"></i> Ajuda</a></li>
-        </ul>
-        <div class="sidebar-footer"> 
-            <form action="{% url 'logout' %}" method="post">
-                {% csrf_token %}
-                <button type="submit" class="btn-logout">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"/>
-                        <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"/>
-                    </svg>
-                    Logout
-                </button>
-            </form>
-        </div>
-    </div>
+    <div class="d-flex">
+        <nav class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Menu</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="{% url 'search_jobs' %}"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="{% url 'admin:index' %}"><i class="fas fa-user-cog"></i> Admin</a></li>
+                <li><a href="{% url 'all_servers' %}"><i class="fas fa-server"></i> All Server</a></li>
+                <li><a href="{% url 'all_jobs' %}"><i class="fas fa-table"></i> All Jobs</a></li>
+                <li><a href="{% url 'ajuda' %}"><i class="fas fa-question-circle"></i> Ajuda</a></li>
+            </ul>
+            <div class="sidebar-footer"> 
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-outline-danger" aria-label="Logout">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                </form>
+            </div>
+        </nav>
 
-    <button class="sidebar-toggle" id="sidebar-toggle">
-        <i class="fas fa-chevron-left"></i>
-    </button>
+        <main class="content flex-grow-1">
+            <header>
+                <h1 class="mt-4 mb-4 text-center">AltSec</h1>
+            </header>
+            <div class="container">
+                <form id="search-form" method="post" class="mb-4">
+                    {% csrf_token %}
+                    <div class="search-bar d-flex justify-content-center">
+                        <input type="text" name="search_query" placeholder="Busque..." class="form-control me-2" autocomplete="off">
+                        <button type="submit" class="btn btn-primary">🔍</button>
+                    </div>
+                </form>
 
-    <div class="content">
-        <header>
-            <h1 class="mt-4 mb-4">AltSec</h1>
-        </header>
-        <div class="container">
-            <form id="search-form" method="post" class="mb-4">
-                {% csrf_token %}
-                <div class="search-bar">
-                    <input type="text" name="search_query" placeholder="Busque..." class="form-control">
-                    <button type="submit" class="btn btn-primary">🔍</button>
+                <div id="server_results">
+                    {% include 'jobs/server.html' %}
+                    
+                    <!-- Paginação para servidores -->
+                    <nav aria-label="Navegação de página para servidores" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            {% if Servidores_CC.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1&num_display={{ num_display }}">Primeira</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ Servidores_CC.previous_page_number }}&num_display={{ num_display }}">Anterior</a>
+                                </li>
+                            {% endif %}
+
+                            {% for i in Servidores_CC.paginator.page_range %}
+                                {% if i >= Servidores_CC.number|add:-2 and i <= Servidores_CC.number|add:2 %}
+                                    <li class="page-item {% if Servidores_CC.number == i %}active{% endif %}">
+                                        <a class="page-link" href="?page={{ i }}&num_display={{ num_display }}">{{ i }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if Servidores_CC.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ Servidores_CC.next_page_number }}&num_display={{ num_display }}">Próximo</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
                 </div>
-            </form>
-
-            <div id="server_results">
-                {% include 'jobs/server.html' %}
                 
-                <!-- Paginação para servidores -->
-                <nav aria-label="Navegação de página exemplo" class="mt-4">
-                    <ul class="pagination">
-                        {% if Servidores_CC.has_previous %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page=1&num_display={{ num_display }}">Primeira</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ Servidores_CC.previous_page_number }}&num_display={{ num_display }}">Anterior</a>
-                            </li>
-                        {% endif %}
-
-                        {% for i in Servidores_CC.paginator.page_range %}
-                            {% if i >= Servidores_CC.number|add:-2 and i <= Servidores_CC.number|add:2 %}
-                                <li class="page-item {% if Servidores_CC.number == i %}active{% endif %}">
-                                    <a class="page-link" href="?page={{ i }}&num_display={{ num_display }}">{{ i }}</a>
+                <div id="job-results">
+                    {% include 'jobs/results.html' %}
+                    
+                    <!-- Paginação para jobs -->
+                    <nav aria-label="Navegação de página para jobs" class="mt-4">
+                        <ul class="pagination justify-content-center">
+                            {% if jobs.has_previous %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page=1&num_display={{ num_display }}">Primeira</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ jobs.previous_page_number }}&num_display={{ num_display }}">Anterior</a>
                                 </li>
                             {% endif %}
-                        {% endfor %}
-
-                        {% if Servidores_CC.has_next %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ Servidores_CC.next_page_number }}&num_display={{ num_display }}">Próximo</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
-            
-            <div id="job-results">
-                {% include 'jobs/results.html' %}
-                
-                <!-- Paginação para jobs -->
-                <nav aria-label="Navegação de página exemplo" class="mt-4">
-                    <ul class="pagination">
-                        {% if jobs.has_previous %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page=1&num_display={{ num_display }}">Primeira</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ jobs.previous_page_number }}&num_display={{ num_display }}">Anterior</a>
-                            </li>
-                        {% endif %}
-                        
-                        {% for i in jobs.paginator.page_range %}
-                            {% if i >= jobs.number|add:-2 and i <= jobs.number|add:2 %}
-                                <li class="page-item {% if jobs.number == i %}active{% endif %}">
-                                    <a class="page-link" href="?page={{ i }}&num_display={{ num_display }}">{{ i }}</a>
+                            
+                            {% for i in jobs.paginator.page_range %}
+                                {% if i >= jobs.number|add:-2 and i <= jobs.number|add:2 %}
+                                    <li class="page-item {% if jobs.number == i %}active{% endif %}">
+                                        <a class="page-link" href="?page={{ i }}&num_display={{ num_display }}">{{ i }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            
+                            {% if jobs.has_next %}
+                                <li class="page-item">
+                                    <a class="page-link" href="?page={{ jobs.next_page_number }}&num_display={{ num_display }}">Próximo</a>
                                 </li>
                             {% endif %}
-                        {% endfor %}
-                        
-                        {% if jobs.has_next %}
-                            <li class="page-item">
-                                <a class="page-link" href="?page={{ jobs.next_page_number }}&num_display={{ num_display }}">Próximo</a>
-                            </li>
-                        {% endif %}
-                    </ul>
-                </nav>
-            </div>
+                        </ul>
+                    </nav>
+                </div>
 
-            <div id="Cc_fast">
-                {% include 'jobs/Cc_fast.html' %}
+                <div id="Cc_fast">
+                    {% include 'jobs/Cc_fast.html' %}
+                </div>
             </div>
-        </div>
+        </main>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {

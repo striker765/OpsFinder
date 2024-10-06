@@ -28,7 +28,7 @@ def show_all_jobs(request):
     jobs = Job.objects.all()
     
     
-    num_display = request.GET.get('num_display', 10)
+    num_display = request.GET.get('num_display', 5)
     paginator = Paginator(jobs, int(num_display))
 
     page_number = request.GET.get('page')
@@ -43,7 +43,7 @@ def show_all_jobs(request):
 def show_all_servers(request):
     servidores_cc = Servidores_CC.objects.all()  
     
-    num_display = request.GET.get('num_display', 10)
+    num_display = request.GET.get('num_display', 5)
     paginator = Paginator(servidores_cc, int(num_display))
 
     page_number = request.GET.get('page')
@@ -52,8 +52,8 @@ def show_all_servers(request):
     return render(request, 'jobs/index.html', {
         'Servidores_CC': servers_page,
         'num_display': num_display,
-        'jobs': [],  # Adicione essa linha se o template espera a variável 'jobs'
-        'message': "",  # Adicione uma mensagem vazia, se necessário
+        'jobs': [],  
+        'message': "",  
     })
 @login_required
 def ajuda(request):
