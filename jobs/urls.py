@@ -1,5 +1,9 @@
 from django.urls import path
 from . import views
+from django.urls import path
+from django.shortcuts import render
+
+
 
 urlpatterns = [
     path('', views.search_jobs, name='search_jobs'),
@@ -8,3 +12,6 @@ urlpatterns = [
     path('show_all_jobs/', views.show_all_jobs, name='show_all_jobs'),
 
 ]
+
+
+

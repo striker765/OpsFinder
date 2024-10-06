@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from django.contrib import admin
-from .models import Job , Cc_server  , Cc_fast
+from .models import Job 
 
 class JobAdmin(admin.ModelAdmin):
     list_display = (
@@ -17,28 +17,3 @@ class JobAdmin(admin.ModelAdmin):
 
 admin.site.register(Job, JobAdmin)
 
-
-
-class Cc_serverAdmin(admin.ModelAdmin):
-    list_display = (
-        'id', 'server_name', 'server_cliente', 'datacenter',
-        'plataforma', 'ip', 'criticidade', 'responsabilidade',
-        'escalonamento1', 'escalonamento2'
-    )
-    list_display_links = ('id', 'server_name')
-    search_fields = ('server_name', 'server_cliente', 'ip')  # Campos que podem ser buscados
-    list_filter = ('datacenter', 'plataforma', 'criticidade')  # Campos para filtragem
-    ordering = ('server_name',)  # Ordenação padrão
-
-admin.site.register(Cc_server, Cc_serverAdmin)
-
-
-from django.contrib import admin
-from .models import Cc_fast
-
-class CcFastAdmin(admin.ModelAdmin):
-    list_display = ('server_name', 'server_cliente', 'datacenter', 'ip', 'criticidade')
-    search_fields = ('server_name', 'server_cliente', 'datacenter', 'ip')
-    list_filter = ('plataforma', 'criticidade', 'responsabilidade')
-
-admin.site.register(Cc_fast, CcFastAdmin)
