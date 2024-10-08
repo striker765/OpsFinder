@@ -5,203 +5,190 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="{% static 'adminlte/plugins/fontawesome-free/css/all.min.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Incluindo Chart.js -->
     <style>
         body {
-            background-color: #121212;
+            background-color: #121212; /* Fundo escuro */
             color: #ffffff;
             font-family: 'Arial', sans-serif;
             margin: 0;
         }
         .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             padding: 20px;
+            height: 100vh; /* Altura total da tela */
+            overflow: hidden; /* Evita rolagem */
         }
         .small-box {
             border-radius: 10px;
-            padding: 20px;
-            margin: 15px 0;
+            padding: 15px;
+            margin: 10px;
             transition: transform 0.3s, box-shadow 0.3s;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1; /* Faz as caixas crescerem uniformemente */
+            min-width: 150px; /* Tamanho mínimo */
         }
-        .small-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
-        .bg-info {
-            background-color: #17a2b8 !important;
-        }
-        .bg-success {
-            background-color: #28a745 !important;
-        }
-        .bg-warning {
-            background-color: #ffc107 !important;
-        }
-        .bg-secondary {
-            background-color: #6c757d !important;
-        }
+        .bg-info { background-color: #17a2b8 !important; }
+        .bg-success { background-color: #28a745 !important; }
+        .bg-warning { background-color: #ffc107 !important; }
+        .bg-secondary { background-color: #6c757d !important; }
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             font-size: 2rem;
             color: #ffffff;
         }
-        canvas {
-            background-color: #1e1e1e;
-            border-radius: 10px;
-            padding: 10px;
+        h2 {
+            color: #ffc107; /* Cor diferente para o título dos gráficos */
+            margin: 20px 0;
         }
         .row {
-            margin: 0 -15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%; /* Ocupa toda a largura */
         }
-        .icon {
-            font-size: 40px;
-        }
-        @media (max-width: 768px) {
-            .small-box {
-                margin: 15px 0;
-            }
-            h1 {
-                font-size: 1.5rem;
-            }
+        canvas {
+            max-width: 100%; 
+            height: auto; 
+            border: 2px solid #ffffff; /* Borda branca para o gráfico */
+            border-radius: 10px; /* Cantos arredondados */
+            margin: 10px; /* Espaço entre os gráficos */
         }
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-    <nav class="main-header navbar navbar-expand navbar-dark bg-dark">
-        <ul class="navbar-nav">
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="/" class="nav-link">Home</a>
-            </li>
-        </ul>
-    </nav>
-
-    <div class="content-wrapper">
-        <div class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-12">
-                        <h1 class="m-0">Dashboard</h1>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="small-box bg-info">
+            <div class="inner">
+                <h3>{{ total_users }}</h3>
+                <p>Usuários Totais</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-users"></i>
             </div>
         </div>
 
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- Card de Usuários -->
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>{{ total_users }}</h3>
-                                <p>Usuários Totais</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card de Servidores CC -->
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>{{ total_servidores_cc }}</h3>
-                                <p>Servidores CC Ativos</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card de Servidores FastShop -->
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>{{ total_servidores_fastshop }}</h3>
-                                <p>Servidores FastShop Ativos</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-server"></i>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card de Jobs -->
-                    <div class="col-lg-3 col-6">
-                        <div class="small-box bg-secondary">
-                            <div class="inner">
-                                <h3>{{ total_jobs }}</h3>
-                                <p>Total de Jobs</p>
-                            </div>
-                            <div class="icon">
-                                <i class="fas fa-briefcase"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gráfico -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <canvas id="myChart" style="max-height: 400px;"></canvas>
-                    </div>
-                </div>
+        <div class="small-box bg-secondary">
+            <div class="inner">
+                <h3 id="pingResult">{{ ping_result }}</h3>
+                <p>Ping - Site</p>
             </div>
+            <div class="icon">
+                <i class="fas fa-network-wired"></i>
+            </div>
+        </div>
+
+        <div class="small-box bg-success">
+            <div class="inner">
+                <h3>{{ total_servidores_cc }}</h3>
+                <p>Servidores CC Ativos</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-server"></i>
+            </div>
+        </div>
+
+        <div class="small-box bg-warning">
+            <div class="inner">
+                <h3>{{ total_servidores_fastshop }}</h3>
+                <p>Servidores FastShop Ativos</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-server"></i>
+            </div>
+        </div>
+
+        <div class="small-box bg-secondary">
+            <div class="inner">
+                <h3>{{ total_jobs }}</h3>
+                <p>Total de Jobs</p>
+            </div>
+            <div class="icon">
+                <i class="fas fa-briefcase"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="small-box">
+            <canvas id="usersChart" width="400" height="200"></canvas>
+        </div>
+        <div class="small-box">
+            <canvas id="pingChart" width="400" height="200"></canvas>
+        </div>
+
+        <div class="small-box">
+            <canvas id="servCCChart" width="400" height="200"></canvas>
+        </div>
+        <div class="small-box">
+            <canvas id="servFastshopChart" width="400" height="200"></canvas>
+        </div>
+        <div class="small-box">
+            <canvas id="jobsChart" width="400" height="200"></canvas>
         </div>
     </div>
 </div>
 
 <script>
-// Configuração do gráfico
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Usuários', 'Servidores CC', 'Servidores FastShop', 'Jobs'],
-        datasets: [{
-            label: 'Total',
-            data: [{{ total_users }}, {{ total_servidores_cc }}, {{ total_servidores_fastshop }}, {{ total_jobs }}],
-            backgroundColor: [
-                'rgba(54, 162, 235, 0.8)',
-                'rgba(75, 192, 192, 0.8)',
-                'rgba(255, 206, 86, 0.8)',
-                'rgba(153, 102, 255, 0.8)',
-            ],
-            borderColor: [
-                'rgba(54, 162, 235, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(153, 102, 255, 1)',
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true,
-                ticks: {
-                    color: '#ffffff'
-                }
+    const pingTimes = {{ ping_times_json|safe }};
+    const timestamps = {{ timestamps_json|safe }}; // Carregar timestamps como JSON
+
+    const createChart = (ctx, labels, data, label) => {
+        return new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: label,
+                    data: data,
+                    borderColor: '#1f77b4',
+                    backgroundColor: 'rgba(31, 119, 180, 0.2)',
+                    fill: true,
+                    tension: 0.4,
+                }]
             },
-            x: {
-                ticks: {
-                    color: '#ffffff'
+            options: {
+                scales: {
+                    x: { title: { display: true, text: 'Hora' } }, // Eixo X
+                    y: { title: { display: true, text: 'Tempo (ms)' }, beginAtZero: true }
                 }
             }
-        },
-        plugins: {
-            legend: {
-                labels: {
-                    color: '#ffffff'
-                }
-            }
-        }
-    }
-});
+        });
+    };
+
+
+
+    const pingCtx = document.getElementById('pingChart').getContext('2d');
+    createChart(pingCtx, pingTimes.map((_, index) => index + 1), pingTimes, 'Tempo de Resposta (ms)');
+
+    const usersData = {{ users_data|safe }};
+    const usersCtx = document.getElementById('usersChart').getContext('2d');
+    createChart(usersCtx, usersData.map((_, index) => index + 1), usersData, 'Usuários Totais');
+
+    const servCCData = {{ serv_cc_data|safe }};
+    const servCCCtx = document.getElementById('servCCChart').getContext('2d');
+    createChart(servCCCtx, servCCData.map((_, index) => index + 1), servCCData, 'Servidores CC Ativos');
+
+    const servFastshopData = {{ serv_fastshop_data|safe }};
+    const servFastshopCtx = document.getElementById('servFastshopChart').getContext('2d');
+    createChart(servFastshopCtx, servFastshopData.map((_, index) => index + 1), servFastshopData, 'Servidores FastShop Ativos');
+
+    const jobsData = {{ jobs_data|safe }};
+    const jobsCtx = document.getElementById('jobsChart').getContext('2d');
+    createChart(jobsCtx, jobsData.map((_, index) => index + 1), jobsData, 'Total de Jobs');
+
+
+
+
+    
 </script>
 </body>
 </html>
