@@ -5,27 +5,49 @@ from django.contrib.auth.models import User
 import requests  
 import json
 from datetime import datetime
+from django.db.models import Q
 
 from .models import Job, Servidores_CC, Servidores_FastShop
 
 @login_required
 def search_jobs(request):
-    search_query = request.POST.get('search_query', '') if request.method == 'POST' else ''
-    
-    servidores_fastshop = Servidores_FastShop.objects.filter(server_name__icontains=search_query) if search_query else Servidores_FastShop.objects.none()
-    servidores_cc = Servidores_CC.objects.filter(server_name__icontains=search_query) if search_query else Servidores_CC.objects.none()
-    jobs = Job.objects.filter(job_name__icontains=search_query) if search_query else Job.objects.none()
-    
+    # Obtém a consulta de pesquisa
+    search_query = request.POST.get('search_query', '').strip() if request.method == 'POST' else ''
+
+    # Filtra Jobs
+    jobs = Job.objects.filter(
+        Q(job_name__icontains=search_query) | 
+        Q(job_stream__icontains=search_query) | 
+        Q(workstation__icontains=search_query)
+    ) if search_query else Job.objects.none()
+
+    # Filtra Servidores CC
+    servidores_cc = Servidores_CC.objects.filter(
+        Q(server_name__icontains=search_query) | 
+        Q(server_cliente__icontains=search_query) | 
+        Q(ip__icontains=search_query)
+    ) if search_query else Servidores_CC.objects.none()
+
+    # Filtra Servidores FastShop
+    servidores_fastshop = Servidores_FastShop.objects.filter(
+        Q(server_name__icontains=search_query) | 
+        Q(server_cliente__icontains=search_query) | 
+        Q(ip__icontains=search_query)
+    ) if search_query else Servidores_FastShop.objects.none()
+
+    # Mensagem se não houver resultados
     message = ""
     if not (servidores_cc or servidores_fastshop or jobs):
         message = "No results found for your search."
-    
+
+    # Retorna o template com os resultados
     return render(request, 'jobs/index.html', {
         'Servidores_FastShop': servidores_fastshop,
         'Servidores_CC': servidores_cc,
         'jobs': jobs,
         'message': message,
     })
+
 
 @login_required
 def show_all_jobs(request):

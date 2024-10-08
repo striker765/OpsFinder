@@ -1,8 +1,8 @@
 /* Estilos Globais */
 body {
-    background-color: #ffffff; /* Branco para o fundo geral */
+    background-color: #000000; /* Preto para o fundo geral */
     font-family: 'Arial', sans-serif;
-    color: #333333; /* Texto escuro */
+    color: #e0e0e0; /* Cinza muito claro para o texto */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -13,41 +13,41 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #a3c1e0; /* Azul claro */
+    background-color: #00052c; 
     padding: 15px 30px;
     width: 100%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgb(0, 0, 0);
 }
 
 /* Contêiner Principal */
 .container {
-    max-width: 1400px; /* Ajuste tamanho geral da tabela */
+    max-width: 1400px;       /* ajuste tamanho geral da tabela */
     padding: 30px;
-    background-color: #f0f8ff; /* Branco com leve azul */
+    background-color: #00052c; 
     border-radius: 15px;
-    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease;
     margin: 5px auto;
 }
 
 .container:hover {
-    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Cabeçalhos */
 h1 {
-    color: #333333; /* Texto escuro */
+    color: #e0e0e0; 
     font-size: 2.5em;
     text-align: center;
     margin-bottom: 30px;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Parágrafos */
 p {
-    color: #555555; /* Texto um pouco mais claro */
+    color: #b0b0b0; 
     font-size: 1.2em;
     text-align: justify;
     margin-bottom: 30px;
@@ -57,39 +57,39 @@ p {
 form {
     margin-bottom: 30px;
     padding: 20px;
-    background-color: #e6f7ff; /* Azul claro */
+    background-color: #00052c; 
     border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* Jobs */
 .job {
-    background-color: #e6f7ff; /* Azul claro */
-    color: #333333; /* Texto escuro */
+    background-color: #00052c; 
+    color: #e0e0e0; 
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6);
     margin-bottom: 20px;
     transition: all 0.3s ease;
 }
 
 .job:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
 }
 
 /* Tabelas */
 .table {
     width: 100%;
     border-collapse: collapse;
-    margin: 40px 0; /* Ajuste tamanho Tabela resultado */
+    margin: 40px 0;    /* Ajuste tamanho Tabela resultado */
     border-radius: 10px;
     overflow: hidden;
 }
 
 .table thead {
-    background-color: #a3c1e0; /* Azul claro */
-    color: #ffffff; /* Texto branco */
+    background-color: #00052c; 
+    color: #e0e0e0; 
 }
 
 .table th {
@@ -100,28 +100,28 @@ form {
 
 .table td {
     padding: 12px 15px;
-    color: #333333; /* Texto escuro */
+    color: #e0e0e0; 
     font-size: 0.9em;
 }
 
 .table tbody tr {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #333;
 }
 
 .table tbody tr.even-row {
-    background-color: #e0f7fa; /* Azul bem claro */
+    background-color: #00052c; 
 }
 
 .table tbody tr.odd-row {
-    background-color: #ffffff; /* Branco */
+    background-color: #12184dea;
 }
 
 .table tbody tr:hover {
-    background-color: #b2ebf2; /* Azul claro ao passar o mouse */
+    background-color: #00052c; 
 }
 
 .table td strong {
-    color: #00796b; /* Verde escuro */
+    color: #d6dfe0;
 }
 
 /* Texto centralizado */
@@ -147,12 +147,12 @@ form {
     position: fixed;
     top: 0;
     left: 0;
-    background: #a3c1e0; /* Azul claro */
-    color: #ffffff; /* Texto branco */
+    background: linear-gradient(180deg, #00052c 0%, #00052c 100%); 
+    color: #ffffff; 
     padding-top: 20px;
-    border-right: 2px solid #a3c1e0;
+    border-right: 2px solid #00052c;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(247, 246, 246, 0.212);
     z-index: 1000;
     overflow-y: auto;
     transform: translateX(0);
@@ -166,16 +166,17 @@ form {
 /* Cabeçalho da Barra Lateral */
 .sidebar-header {
     padding: 20px;
-    border-bottom: 2px solid #a3c1e0; 
-    background: #a3c1e0; /* Azul claro */
+    border-bottom: 2px solid #00052c; 
+    background: linear-gradient(180deg, #00052c, #00052c); 
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 .sidebar-header h1 {
     font-size: 24px;
     margin: 0;
-    color: #ffffff; /* Texto branco */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    color: #00052c; /* Azul pastel claro */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Links da Barra Lateral */
@@ -184,20 +185,20 @@ form {
     align-items: center;
     padding: 15px 20px;
     text-decoration: none;
-    color: #333333; /* Texto escuro */
+    color: #ffffff; /* Cinza muito claro */
     font-size: 18px;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 12px;
     margin: 5px 0;
-    background: #e6f7ff; /* Azul claro para links */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(145deg, #2c3e50, #00052c); /* Gradiente azul mais escuro para azul escuro */
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
 }
 
 .sidebar a:hover, .sidebar a.active {
-    background-color: #b2ebf2; /* Azul claro ao passar o mouse */
-    color: #333333; /* Texto escuro */
+    background-color: #055fb9; /* Azul escuro ao passar o mouse */
+    color: #f5f5f5; /* Cinza muito claro */
     transform: translateX(8px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* Adicionando ícones */
@@ -209,9 +210,10 @@ form {
 /* Rodapé da Barra Lateral */
 .sidebar-footer {
     padding: 20px;
-    border-top: 2px solid #a3c1e0; /* Azul claro */
-    background: #a3c1e0; /* Azul claro */
+    border-top: 2px solid #00052c; /* Azul pastel escuro */
+    background: linear-gradient(180deg, #00052c 0%, #00052c 100%); /* Gradiente de azul pastel muito escuro para azul pastel escuro */
     text-align: center;
+    transition: background-color 0.3s ease;
 }
 
 /* Barra de Alternância da Barra Lateral */
@@ -221,19 +223,19 @@ form {
     left: 20px;
     z-index: 1001;
     cursor: pointer;
-    background: #a3c1e0; /* Azul claro */
-    color: #ffffff; /* Texto branco */
+    background: linear-gradient(145deg, #00052c, #00052c); /* Gradiente azul pastel escuro para azul mais escuro */
+    color: #e0e0e0; /* Cinza muito claro */
     border: none;
     padding: 12px;
     border-radius: 50%;
     font-size: 24px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
 .sidebar-toggle:hover {
-    background: #80deea; /* Azul mais claro ao passar o mouse */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(145deg, #2c3e50, #1a3e6a); /* Gradiente invertido ao passar o mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     transform: scale(1.05);
 }
 
@@ -256,16 +258,16 @@ form {
     border-radius: 25px;
     padding: 12px 20px;
     font-size: 16px;
-    border: 1px solid #a3c1e0; /* Azul claro para a borda */
+    border: 1px solid #d0e3f0; /* Azul claro pastel para a borda */
     background-color: #ffffff; /* Branco para o fundo */
-    color: #333333; /* Texto escuro */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    color: #00052c;
+    box-shadow: 0 4px 10px #01118b;
     transition: all 0.3s ease;
 }
 
 .search-bar input:focus {
     outline: none;
-    border-color: #0097a7; /* Azul pastel claro ao focar */
+    border-color: #5b9bd5; /* Azul pastel claro ao focar */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -275,22 +277,26 @@ form {
     position: absolute;
     right: 0;
     border: none;
-    background-color: #a3c1e0; /* Azul claro para o botão */
-    color: #ffffff; /* Texto branco */
+    background-color: #5b9bd5; /* Azul pastel claro para o botão */
+    color: #ffffff;
     cursor: pointer;
     font-size: 12px;
     transition: background-color 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #5b9bd5;
 }
 
 .search-bar button:hover {
-    background-color: #0097a7; /* Azul escuro ao passar o mouse */
+    background-color: #004080; /* Azul escuro ao passar o mouse */
+}
+
+.search-bar button:focus {
+    outline: none;
 }
 
 /* Botão de Logout */
 .btn-logout {
     background: linear-gradient(145deg, #dc3545, #c82333); /* Gradiente vermelho */
-    color: #ffffff; /* Texto branco */
+    color: #ffffff;
     border: none;
     border-radius: 8px;
     padding: 10px 20px;
@@ -301,7 +307,7 @@ form {
     gap: 10px;
     transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-logout svg {

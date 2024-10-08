@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <title>Dashboard</title>
     <link rel="stylesheet" href="{% static 'adminlte/plugins/fontawesome-free/css/all.min.css' %}">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Incluindo Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            background-color: #121212; /* Fundo escuro */
+            background-color: #121212;
             color: #ffffff;
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -18,8 +18,8 @@
             flex-direction: column;
             align-items: center;
             padding: 20px;
-            height: 100vh; /* Altura total da tela */
-            overflow: hidden; /* Evita rolagem */
+            height: 100vh;
+            overflow: hidden;
         }
         .small-box {
             border-radius: 10px;
@@ -31,40 +31,23 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            flex: 1; /* Faz as caixas crescerem uniformemente */
-            min-width: 150px; /* Tamanho mínimo */
+            flex: 1;
+            min-width: 150px;
         }
         .bg-info { background-color: #17a2b8 !important; }
         .bg-success { background-color: #28a745 !important; }
         .bg-warning { background-color: #ffc107 !important; }
         .bg-secondary { background-color: #6c757d !important; }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 2rem;
-            color: #ffffff;
-        }
-        h2 {
-            color: #ffc107; /* Cor diferente para o título dos gráficos */
-            margin: 20px 0;
-        }
-        .row {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%; /* Ocupa toda a largura */
-        }
-        canvas {
-            max-width: 100%; 
-            height: auto; 
-            border: 2px solid #ffffff; /* Borda branca para o gráfico */
-            border-radius: 10px; /* Cantos arredondados */
-            margin: 10px; /* Espaço entre os gráficos */
-        }
+        h1 { text-align: center; margin-bottom: 20px; font-size: 2rem; color: #ffffff; }
+        h2 { color: #ffc107; margin: 20px 0; }
+        .row { display: flex; justify-content: center; flex-wrap: wrap; width: 100%; }
+        canvas { max-width: 100%; height: auto; border: 2px solid #ffffff; border-radius: 10px; margin: 10px; }
     </style>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
+    <h1>Dashboard</h1>
+    
     <div class="row">
         <div class="small-box bg-info">
             <div class="inner">
@@ -75,7 +58,7 @@
                 <i class="fas fa-users"></i>
             </div>
         </div>
-
+        
         <div class="small-box bg-secondary">
             <div class="inner">
                 <h3 id="pingResult">{{ ping_result }}</h3>
@@ -124,7 +107,6 @@
         <div class="small-box">
             <canvas id="pingChart" width="400" height="200"></canvas>
         </div>
-
         <div class="small-box">
             <canvas id="servCCChart" width="400" height="200"></canvas>
         </div>
@@ -138,9 +120,10 @@
 </div>
 
 <script>
+    // Código para gerar gráficos com Chart.js
     const pingTimes = {{ ping_times_json|safe }};
-    const timestamps = {{ timestamps_json|safe }}; // Carregar timestamps como JSON
-
+    const timestamps = {{ timestamps_json|safe }};
+    
     const createChart = (ctx, labels, data, label) => {
         return new Chart(ctx, {
             type: 'line',
@@ -157,14 +140,12 @@
             },
             options: {
                 scales: {
-                    x: { title: { display: true, text: 'Hora' } }, // Eixo X
+                    x: { title: { display: true, text: 'Hora' } },
                     y: { title: { display: true, text: 'Tempo (ms)' }, beginAtZero: true }
                 }
             }
         });
     };
-
-
 
     const pingCtx = document.getElementById('pingChart').getContext('2d');
     createChart(pingCtx, pingTimes.map((_, index) => index + 1), pingTimes, 'Tempo de Resposta (ms)');
@@ -184,11 +165,6 @@
     const jobsData = {{ jobs_data|safe }};
     const jobsCtx = document.getElementById('jobsChart').getContext('2d');
     createChart(jobsCtx, jobsData.map((_, index) => index + 1), jobsData, 'Total de Jobs');
-
-
-
-
-    
 </script>
 </body>
 </html>

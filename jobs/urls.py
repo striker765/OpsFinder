@@ -12,7 +12,6 @@ urlpatterns = [
     path('ajuda/', views.ajuda, name='ajuda'),
     path('all_jobs/', views.show_all_jobs, name='all_jobs'),
     path('dashboard/', dashboard, name='dashboard'),
-    
 
 ]
 

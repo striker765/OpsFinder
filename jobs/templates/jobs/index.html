@@ -44,10 +44,12 @@
                     {% csrf_token %}
                     <div class="search-bar d-flex justify-content-center">
                         <input type="text" name="search_query" placeholder="Busque..." class="form-control me-2" autocomplete="on">
-                        <button type="submit" class="btn btn-primary">🔍</button>
+                        <button type="submit">
+                            <img src="{% static 'images/icons/discernimento.png' %}" alt="Buscar" style="width: 20px; height: 20px;">
+                        </button>
                     </div>
                 </form>
-
+                
                 <div id="server_results">
                     {% include 'jobs/server.html' %}
                     <!-- Paginação para servidores -->
@@ -114,7 +116,6 @@
                     {% include 'jobs/Cc_fast.html' %}
                 </div>
 
-                <!-- Renderiza o conteúdo do dashboard se estiver na página do dashboard -->
                 <div id="dashboard-content">
                     {% if request.path == '/dashboard/' %}
                         {% include 'jobs/dashboard.html' %}
