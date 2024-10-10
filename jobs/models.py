@@ -1,5 +1,5 @@
 from django.db import models
-
+from servidores.models import Servidores_CC, Servidores_FastShop
 class Job(models.Model):
     job_name = models.CharField(max_length=255, blank=True)
     job_stream = models.CharField(max_length=255, blank=True, null=True)
@@ -15,4 +15,4 @@ class Job(models.Model):
     def __str__(self):
         return self.job_name or "Nome não definido"
 
-from servidores.models import Servidores_CC, Servidores_FastShop
+

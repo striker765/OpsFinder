@@ -44,7 +44,7 @@ class Servidores_FastShop(models.Model):
 
     class Meta:
         verbose_name = "Servidor FastShop"
-        verbose_name_plural = "Servidores FastShop"  # Singular
+        verbose_name_plural = "Servidores FastShop"  
 
 
 class AccessLog(models.Model):
