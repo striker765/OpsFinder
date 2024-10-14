@@ -11,11 +11,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path , os
-from  dotenv import load_dotenv
 import os
 import os
 import logging.config
-
+import os
+from dotenv import load_dotenv
 
 load_dotenv()
 
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'jobs',
     'servidores',
+    'hardware',
     'usuarios.apps.UsuariosConfig',
 
 ]
@@ -85,24 +86,17 @@ WSGI_APPLICATION = 'jobsearch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / "db.sqlite3",
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aplicacao',  # Substitua pelo nome do seu banco
+        'USER': 'root',  # Seu usuário MySQL
+        'PASSWORD': '323231',  # Sua senha do MySQL
+        'HOST': '127.0.0.1',  # Host do MySQL
+        'PORT': '3306',  # Porta padrão do MySQL
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME': 'seu_nome_do_banco',
-#         'CLIENT': {
-#             'host': ${},
-#             'username': 'seu_usuario',
-#             'password': 'sua_senha',
-#             'authSource': 'admin',
-#         }
-#     }
-# }
 
 
 # Password validation
