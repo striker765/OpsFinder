@@ -91,6 +91,7 @@ Melhoria do sistema de notificações em tempo real.
 Integração com ferramentas de monitoramento, como Zabbix e Grafana.
 
 
+![image](https://github.com/user-attachments/assets/869988c0-d693-42fc-b2e0-7b0e98d2a3af)
 
 ![image](https://github.com/user-attachments/assets/e297023f-6d0a-4d41-a7ea-78b57763dc41)
 
