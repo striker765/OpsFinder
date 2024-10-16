@@ -93,10 +93,10 @@ Integração com ferramentas de monitoramento, como Zabbix e Grafana.
 
 ![image](https://github.com/user-attachments/assets/869988c0-d693-42fc-b2e0-7b0e98d2a3af)
 
-![image](https://github.com/user-attachments/assets/e297023f-6d0a-4d41-a7ea-78b57763dc41)
+![image](https://github.com/user-attachments/assets/ad1caaa0-9156-417d-9b17-b86bb0e09fb0)
 
-![image](https://github.com/user-attachments/assets/8b861f04-654d-4595-b881-d9d4f756a363)
+![image](https://github.com/user-attachments/assets/5f519ca6-858d-4038-9568-cb0d01dbe343)
 
-![image](https://github.com/user-attachments/assets/d7bfc4b0-77c0-4ea6-8ed5-c5470301c868)
+![image](https://github.com/user-attachments/assets/70f55bb0-d180-4957-8948-f793b10d7147)
 
 
