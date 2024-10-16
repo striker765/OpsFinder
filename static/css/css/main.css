@@ -61,11 +61,11 @@ a:focus {
 
 a:hover {
 	text-decoration: none;
-  color: #0f2be4;
-  color: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
-  color: -o-linear-gradient(left, #0c3fe7, #b721ff);
-  color: -moz-linear-gradient(left, #0c3fe7, #b721ff);
-  color: linear-gradient(left, #0c3fe7, #b721ff);
+  color: #4fd3c0,;
+  color: -webkit-linear-gradient(left, #4fd3c0, #001117,);
+  color: -o-linear-gradient(left, #4fd3c0, #001117,);
+  color: -moz-linear-gradient(left, #4fd3c0, #001117,);
+  color: linear-gradient(left, #4fd3c0, #001117,);
 }
 
 /*---------------------------------------------*/
@@ -196,7 +196,7 @@ iframe {
   display: block;
   font-family: Poppins-Bold;
   font-size: 30px;
-  color: #cecdcd;
+  color: #ffffff;
   line-height: 1.2;
   text-align: center;
 }
@@ -217,7 +217,7 @@ iframe {
 .input100 {
   font-family: Poppins-Regular;
   font-size: 15px;
-  color: #ececec;
+  color: #ffffff;
   line-height: 1.2;
 
   display: block;
@@ -252,25 +252,25 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 
-  background: #6a7dfe;
-  background: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
-  background: -o-linear-gradient(left, #0c3fe7, #b721ff);
-  background: -moz-linear-gradient(left, #0c3fe7, #b721ff);
-  background: linear-gradient(left, #0c3fe7, #b721ff);
+  background: #4fd3c0;
+  background: -webkit-linear-gradient(left, #4fd3c0, #001117);
+  background: -o-linear-gradient(left, #4fd3c0, #001117);
+  background: -moz-linear-gradient(left, #4fd3c0, #001117);
+  background: linear-gradient(left, #4fd3c0, #001117);
 }
 
 .focus-input100::after {
-  font-family: Poppins-Regular;
+  font-family: 'Montserrat', sans-serif; 
   font-size: 15px;
-  color: #e2e2e2;
-  line-height: 1.2;
+  color: #ffffff;
+  line-height: 1.5;
 
   content: attr(data-placeholder);
   display: block;
   width: 100%;
   position: absolute;
-  top: 16px;
-  left: 0px;
+  top: 20px;
+  left: 5px;
   padding-left: 5px;
 
   -webkit-transition: all 0.4s;
@@ -278,6 +278,7 @@ iframe {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
+
 
 .input100:focus + .focus-input100::after {
   top: -15px;
@@ -298,7 +299,7 @@ iframe {
 /*---------------------------------------------*/
 .btn-show-pass {
   font-size: 15px;
-  color: #999999;
+  color: #4fd3c0;
 
   display: -webkit-box;
   display: -webkit-flex;
@@ -318,20 +319,14 @@ iframe {
   transition: all 0.4s;
 }
 
-.btn-show-pass:hover {
-  color: #6a7dfe;
-  color: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
-  color: -o-linear-gradient(left, #0c3fe7, #b721ff);
-  color: -moz-linear-gradient(left, #0c3fe7, #b721ff);
-  color: linear-gradient(left, #0c3fe7, #b721ff);
-}
+
 
 .btn-show-pass.active {
-  color: #6a7dfe;
-  color: -webkit-linear-gradient(left, #0c3fe7, #b721ff);
-  color: -o-linear-gradient(left, #0c3fe7, #b721ff);
-  color: -moz-linear-gradient(left, #0c3fe7, #b721ff);
-  color: linear-gradient(left, #0c3fe7, #b721ff);
+  background: #001117; /* Cor base */
+  background: -webkit-linear-gradient(right, #4fd3c0, #001117, #001117, #001117); /* Gradiente para Webkit */
+  background: -o-linear-gradient(right, #4fd3c0, #001117, #001117, #001117); /* Gradiente para Opera */
+  background: -moz-linear-gradient(right, #4fd3c0, #001117, #001117, #001117); /* Gradiente para Firefox */
+  background: linear-gradient(to right,#4fd3c0, #001117, #001117, #001117); /* Gradiente padrão */
 }
 
 
@@ -364,12 +359,12 @@ iframe {
   z-index: -1;
   width: 300%;
   height: 100%;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
-  background: -o-linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
-  background: -moz-linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
-  background: linear-gradient(right, #0c3fe7, #b721ff, #0c3fe7, #b721ff);
-  top: 0;
+  background: #001117; /* Cor base */
+  background: -webkit-linear-gradient(right, #4fd3c0, #001117, #001117, #001117); /* Gradiente para Webkit */
+  background: -o-linear-gradient(right, #4fd3c0, #001117, #001117, #001117); /* Gradiente para Opera */
+  background: -moz-linear-gradient(right, #4fd3c0, #001117, #001117, #001117); /* Gradiente para Firefox */
+  background: linear-gradient(to right,#4fd3c0, #001117, #001117, #001117); /* Gradiente padrão */
+      top: 0;
   left: -100%;
 
   -webkit-transition: all 0.4s;
